@@ -1,3 +1,14 @@
-import React from "react"
+import React,{ Component } from "react"
+import Main from '../components/main'
+import 'semantic-ui-css/semantic.min.css'
 
-export default () => <div>Hello world!</div>
+class App extends Component {
+    render() {
+      return (
+        <div className="App">
+            <Main />
+        </div>
+      )
+    }
+  }
+  export default App
