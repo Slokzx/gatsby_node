@@ -19,7 +19,7 @@ componentDidMount() {
     .then(jsonData => {
         this.setState({ data: jsonData });
     })
-    .catch(e => console.log("There is a error at initial fetch"));
+    .catch(e => console.log("There is an error at initial fetch"));
 }
 
 handleChange = (e) => {
@@ -28,7 +28,14 @@ handleChange = (e) => {
   .then(jsonData => {
       this.setState({ data: jsonData });
   })
-  .catch(e => console.log("There is a error"));
+  .catch(e => console.log("There is a error while fetching that id"));
+}
+
+handleDelete = (e) => {
+  fetch('http://10.0.0.116:1234/api/students/getStudents?id='+ e, {
+        method: 'DELETE'
+      })
+  .catch(e => console.log("There is an error while deleting"));
 }
 
 render() {
@@ -41,7 +48,7 @@ render() {
         <StudentForm />
         <br></br>
         <Header size='large'>Delete a student</Header>
-        <Delete onIDdelete={this.handleDelelte}/>
+        <Delete onIDdelete={this.handleDelete}/>
         <br></br>
         <Header size='large'>Student Details</Header>
         <Table tableData={this.state.data}/>
