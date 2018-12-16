@@ -1,5 +1,5 @@
 import React,{ Component } from 'react'
-import { Form } from 'semantic-ui-react'
+import { Form, Button } from 'semantic-ui-react'
 
 class TextBox extends Component {
 
@@ -24,9 +24,9 @@ class TextBox extends Component {
       return (
         <Form>
         <Form.Group widths='equal'>
-          <Form.Input fluid label='IDNumber' name='IDNumber' placeholder='Write a ID number' onChange={this.handleChange}/>
+          <Form.Input fluid label='ID Number' name='IDNumber' placeholder='Write a ID number' onChange={this.handleChange}/>
         </Form.Group>
-        <Form.Button onClick={this.handleSubmit}>Search</Form.Button>
+        <Button className="ui positive button"  onClick={this.handleSubmit}>Search</Button>
       </Form>
       )
     }

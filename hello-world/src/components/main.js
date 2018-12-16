@@ -1,6 +1,9 @@
 import React,{ Component } from "react"
 import TextBox from "../tools/textbox"
 import Table from "../tools/table"
+import StudentForm from "../tools/forms"
+import Delete from "../tools/delete"
+import { Header } from 'semantic-ui-react'
 
 class Main extends Component {
   constructor(props) {
@@ -30,12 +33,19 @@ handleChange = (e) => {
 
 render() {
   return (
-    <div>
-        <p>Enter a Student ID</p>
+    <div className="ui left aligned segment container" style={{"height":"100"}}>
+        <Header size='large'>Enter a Student ID</Header>
         <TextBox onIDChange={this.handleChange}/>
         <br></br>
-        <p>Below are the table information on the searched student</p>
+        <Header size='large'>Add a student</Header>
+        <StudentForm />
+        <br></br>
+        <Header size='large'>Delete a student</Header>
+        <Delete />
+        <br></br>
+        <Header size='large'>Student Details</Header>
         <Table tableData={this.state.data}/>
+        <br></br>
     </div>
     )
   }
