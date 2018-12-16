@@ -41,7 +41,7 @@ render() {
         <StudentForm />
         <br></br>
         <Header size='large'>Delete a student</Header>
-        <Delete />
+        <Delete onIDdelete={this.handleDelelte}/>
         <br></br>
         <Header size='large'>Student Details</Header>
         <Table tableData={this.state.data}/>

@@ -12,8 +12,8 @@ class Delete extends Component {
 
     handleSubmit = (e) =>{
         e.preventDefault();
-        this.props.onIDChange(this.state.IDNumberDelete);
-        this.setState({ IDNumberDelete: ''}); 
+        this.props.onIDdelete(this.state.IDNumberDelete);
+        this.setState({ IDNumberDelete:''}); 
       }
 
     handleChange= (e) =>{
