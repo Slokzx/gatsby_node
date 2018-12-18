@@ -25,6 +25,7 @@ class StudentForm extends Component {
             emailid: this.state.Email
         })
       })
+      .catch(e => console.log("There is an error while Adding"));
       this.setState({
             ID: '',
             FirstName: '',
