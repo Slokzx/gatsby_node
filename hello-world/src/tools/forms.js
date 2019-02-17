@@ -15,16 +15,21 @@ class StudentForm extends Component {
   }
   
   handleSubmit = (e) =>{
-    fetch('http://10.0.0.116:1234/api/students/getStudents', {
+    fetch('http://10.0.0.116:1234/api/students/addStudents', {
+          headers: {
+            "Content-Type": "application/json",
+        },
+        mode: 'no-cors',
         method: 'POST',
         body: JSON.stringify({
             id: this.state.ID,
             fname: this.state.FirstName,
             lname: this.state.LastName,
             contact: this.state.Contact,
-            emailid: this.state.Email
+            email: this.state.Email
         })
       })
+      .then(data => console.log(data))
       .catch(e => console.log("There is an error while Adding"));
       this.setState({
             ID: '',
